@@ -10,6 +10,8 @@ export default function Header() {
   const navigate = useNavigate();
   const role = localStorage.getItem("role");
   const user = JSON.parse(localStorage.getItem("user"));
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
 
 
   const count =  useSelector((state)=>state.cart.cartItemsCount);
@@ -42,17 +44,17 @@ export default function Header() {
         <button
           className="navbar-toggler"
           type="button"
+          onClick={() => setIsNavCollapsed(!isNavCollapsed)}
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown"
-          aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Center and Right */}
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <div className={`collapse navbar-collapse ${!isNavCollapsed ? 'show' : ''}`} id="navbarNavDropdown">
           {/* Center Nav Links */}
           <ul className="navbar-nav mx-auto ">
             <li className="nav-item">
@@ -88,7 +90,6 @@ export default function Header() {
                 <i className="bi bi-search"></i>
               </button>
             </div>
-            {/* Login */}
             {/* Login Dropdown */}
             <div className="nav-item dropdown">
             <button
