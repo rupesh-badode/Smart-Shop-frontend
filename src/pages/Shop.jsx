@@ -25,7 +25,6 @@ export default function Shop() {
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-
     axios.get("http://127.0.0.1:3300/products")
     .then(function(res){
       setProducts(res.data)
@@ -70,7 +69,7 @@ export default function Shop() {
 const handleBuyNow = (item) => {
   const options = {
     key: "rzp_test_yQ3wzRyUxUTYJO",
-    amount: item.price , 
+    amount: item.price*100 , 
     currency: "INR",
     name: "SmartShop",
     description: item.title,
