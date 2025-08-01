@@ -15,14 +15,6 @@ SmartShop is a modern, responsive, and full-featured e-commerce web application 
 - 🎨 Beautiful UI using Bootstrap 5, AOS Animations
 - 📱 Fully Responsive Design
 
----
-
-## 📸 Screenshots
-
-
-> Add a few screenshots here (e.g., Home page, Product details, Cart, Payment page)
-
----
 
 ## 🧰 Tech Stack
 
