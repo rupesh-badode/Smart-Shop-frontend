@@ -8,6 +8,8 @@ export default function BecomeSeller() {
     AOS.init({ duration: 1000 });
   }, []);
 
+
+
   return (
     <div className="container py-5">
       {/* Hero Section */}
@@ -48,7 +50,7 @@ export default function BecomeSeller() {
 
       {/* Call to Action */}
       <div className="text-center mt-5" data-aos="zoom-in">
-        <Link className="btn btn-lg btn-primary px-4 py-2" to="/seller/register" >
+        <Link className="btn btn-lg btn-primary px-4 py-2" to="/seller/register">
          <i className="bi bi-box-arrow-in-right me-2"></i>Start Selling
         </Link>
       </div>

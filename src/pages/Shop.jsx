@@ -17,7 +17,6 @@ export default function Shop() {
 
   const user =  localStorage.getItem("role");
  
-  
   function useQuery(){
     return new URLSearchParams(useLocation().search);
   }
@@ -47,8 +46,6 @@ export default function Shop() {
     )
   }
 
-
-
   const filteredProducts = products
     .filter((item) => filter === 'all' || item.category === filter)
     .filter((item) =>
@@ -65,11 +62,35 @@ export default function Shop() {
     'electronics',
   ];
 
-  
-
   function addToCartClick(item){
     dispatch(addToCart(item));
-}
+  }
+
+
+const handleBuyNow = (item) => {
+  const options = {
+    key: "rzp_test_yQ3wzRyUxUTYJO",
+    amount: item.price , 
+    currency: "INR",
+    name: "SmartShop",
+    description: item.title,
+    image: item.image,
+    handler: function (response) {
+      alert("Payment Successful! Razorpay ID: " + response.razorpay_payment_id);
+      // Optionally: Save order to backend/localStorage here
+    },
+    prefill: {
+      name: "Customer",
+      email: "customer@example.com",
+      contact: "9999999999"
+    },
+    theme: {
+      color: "#3399cc"
+    }
+  };
+  const rzp = new window.Razorpay(options);
+  rzp.open();
+};
 
   return (
     <>
@@ -146,7 +167,7 @@ export default function Shop() {
                     </div>
                   </div>
                   <div className="card-footer text-center d-flex gap-2">
-                    <button className="btn btn-sm btn-success w-50">
+                    <button className="btn btn-sm btn-success w-50" onClick={()=>handleBuyNow(item)} >
                       Buy Now
                     </button>
                     <button

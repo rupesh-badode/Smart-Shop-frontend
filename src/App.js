@@ -14,6 +14,7 @@ import Login from './auth/Login.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Order from './pages/Order.jsx';
 import Buy from './pages/Buy.jsx';
+import Profile from './pages/Profile.jsx';
 function App() {
   return (
     <>
@@ -28,8 +29,9 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/seller' element={<BecomeSeller/>}  />
         <Route path='/seller/register' element={<Register/>} />
-        <Route path='/signup'  element={<SignUp/>}   />
+        <Route path='/signup'  element={<SignUp/>} />
         <Route path='/login'  element={<Login/>}/>
+        <Route path='/profile' element={<Profile/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/buy' element={<Buy/>}  />
