@@ -10,7 +10,7 @@ export default function ProductDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:3300/products/${id}`);
+        const res = await axios.get(`https://smart-shop-backend-5q5i.onrender.com/products/${id}`);
         setProduct(res.data);
         console.log("✅ Fetched product with ID:", id);
       } catch (err) {

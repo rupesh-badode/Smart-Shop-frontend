@@ -33,7 +33,7 @@ export default function Dashboard() {
   }, []);
 
   const fetchProducts = async () => {
-    const res = await axios.get("http://localhost:3300/products");
+    const res = await axios.get("https://smart-shop-backend-5q5i.onrender.com/products");
     setProducts(res.data);
   };
 
@@ -43,7 +43,7 @@ export default function Dashboard() {
     if (!confirmed) return;
 
     try {
-      const res = await axios.delete(`http://localhost:3300/products/${id}`);
+      const res = await axios.delete(`https://smart-shop-backend-5q5i.onrender.com/${id}`);
       alert("Product deleted successfully");
       fetchProducts();
     } catch (error) {
@@ -63,10 +63,10 @@ export default function Dashboard() {
 
   const handleSubmit = async (values, { resetForm }) => {
     if (modalMode === "add") {
-      await axios.post("http://localhost:3300/addproduct", values);
+      await axios.post("https://smart-shop-backend-5q5i.onrender.com/addproduct", values);
       alert("product added successfully");
     } else {
-      const res = await axios.put(`http://localhost:3300/products/${selectedProduct._id}`, values);
+      const res = await axios.put(`https://smart-shop-backend-5q5i.onrender.com/${selectedProduct._id}`, values);
       console.log("Update response:", res.data);
       alert("Product updated successfully");
     }

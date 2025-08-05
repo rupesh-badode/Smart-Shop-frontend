@@ -25,7 +25,7 @@ export default function Shop() {
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-    axios.get("http://127.0.0.1:3300/products")
+    axios.get("https://smart-shop-backend-5q5i.onrender.com/products")
     .then(function(res){
       setProducts(res.data)
     })
