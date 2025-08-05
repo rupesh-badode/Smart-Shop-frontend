@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import Order from './pages/Order.jsx';
 import Buy from './pages/Buy.jsx';
 import Profile from './pages/Profile.jsx';
+import About from './pages/About.jsx';
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
         <Route path='/shop' element={<Shop/>} />
         <Route path='/shop/:id' element={<ProductDetail/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/about' element={<About/>} />
         <Route path='/seller' element={<BecomeSeller/>}  />
         <Route path='/seller/register' element={<Register/>} />
         <Route path='/signup'  element={<SignUp/>} />

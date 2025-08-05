@@ -98,7 +98,7 @@ export default function Header() {
               <Link className="nav-link" to="/contact"onClick={closeNavbar} ><i className="bi bi-envelope me-1"></i> Contact</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#"onClick={closeNavbar} ><i className="bi bi-exclamation-circle"></i> About</Link>
+              <Link className="nav-link" to="/about"onClick={closeNavbar} ><i className="bi bi-exclamation-circle"></i> About</Link>
             </li>
             <li className="nav-item">
               {role === "seller" ? (
